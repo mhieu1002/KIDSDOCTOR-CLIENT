@@ -7,23 +7,23 @@ export default function DoctorTeam() {
   const doctors = [
     {
       id: 1,
-      name: "BS. NGUYỄN THỊ THẢO",
+      name: "BS. BSCK1. NGUYỄN THỊ THẢO",
       specialty: "Bác sĩ Bệnh viện Nhi Đồng 2",
-      skills: "Chuyên khoa Tiêu hóa - Gan mật.",
+      skills: "Chuyên khoa ...",
       img: bsThao,
     },
     {
       id: 2,
       name: "ThS. BSCK1. HOÀNG MINH TUYỀN",
       specialty: "Bác sĩ Bệnh viện Nhi Đồng 2",
-      skills: "Chuyên khoa Hô hấp - Miễn dịch.",
+      skills: "Chuyên khoa Thận - Nội Tiết.",
       img: bsTuyen,
     },
     {
       id: 3,
       name: "ThS. BSCK1. THANH BÌNH",
       specialty: "Bác sĩ chuyên khoa",
-      skills: "Chuyên khoa Nhi tổng quát.",
+      skills: "...",
       img: bsBinh,
     },
   ];

@@ -25,7 +25,7 @@ export default function AppointmentSection() {
               <p>Thời gian khám từ: 17h00 – 20h00</p>
             </div>
           </div>
-          {/* <div className="time-item">
+          <div className="time-item">
             <span className="icon">🕒</span>
             <div
               style={{
@@ -37,7 +37,7 @@ export default function AppointmentSection() {
               <strong>Chủ Nhật</strong>
               <p>Thời gian khám từ: 17h00 – 20h00</p>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="note-box">
           <p>

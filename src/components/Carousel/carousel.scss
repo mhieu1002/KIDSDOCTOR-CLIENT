@@ -114,9 +114,11 @@
       height: auto;
     }
   }
-
   // responsive
   @media (max-width: 768px) {
+    .time-list {
+      gap: 30px !important;
+    }
     .book-btn {
       padding: 10px 24px;
       font-size: 15px;
