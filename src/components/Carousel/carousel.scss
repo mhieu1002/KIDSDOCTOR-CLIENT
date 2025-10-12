@@ -1,0 +1,143 @@
+.appointment-section {
+  text-align: center;
+  background: #f6f9ff;
+  padding-bottom: 10px;
+  font-family: "Inter", sans-serif;
+
+  .banner {
+    position: relative;
+
+    img {
+      object-position: top;
+      width: 100%;
+      max-width: 100%;
+      height: 90vh;
+      object-fit: cover;
+      border-radius: 0px 0px 80px 80px;
+    }
+
+    .book-btn {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: none;
+      border-radius: 40px;
+      padding: 14px 32px;
+      font-weight: 600;
+      color: #c2a68c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #ffa4a4;
+        color: white;
+        transform: translateX(-50%) scale(1.05);
+      }
+    }
+  }
+
+  .open-time-card {
+    background: white;
+    margin: 30px auto 20px;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 24px;
+    padding: 32px 24px 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      color: #444;
+      align-self: stretch;
+      position: relative;
+      line-height: 140%;
+      font-weight: 600;
+      font-size: 28px;
+      padding-bottom: 12px;
+    }
+
+    .time-list {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      flex-wrap: wrap;
+
+      .time-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+
+        .icon {
+          font-size: 42px;
+        }
+
+        p {
+          margin: 0;
+          line-height: 1.5;
+          color: #555;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .note-box {
+    background: #fff5f5;
+    border: 1px dashed #ff8a8a;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 20px;
+    border-radius: 16px;
+    padding: 20px 24px;
+    position: relative;
+
+    p {
+      color: #f08787;
+      font-size: 22px;
+      line-height: 1.6;
+      text-align: justify;
+
+      .highlight {
+        color: #f08787;
+        font-weight: 600;
+      }
+    }
+
+    .note-img {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      width: 90px;
+      height: auto;
+    }
+  }
+
+  // responsive
+  @media (max-width: 768px) {
+    .book-btn {
+      padding: 10px 24px;
+      font-size: 15px;
+    }
+
+    .open-time-card {
+      padding: 20px;
+    }
+
+    .note-box .note-img {
+      position: static;
+      display: block;
+      margin: 10px auto 0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    img {
+      border-radius: 0px !important;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.main-header {
+  background: #fff;
+  border-bottom: 1px solid #ffa4a4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        font-family: "Pretendard Variable";
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        color: #999;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        svg {
+          font-size: 20px;
+          margin-bottom: 6px;
+        }
+
+        &:hover {
+          color: #f08787;
+        }
+      }
+
+      &.active a {
+        color: #f08787;
+      }
+    }
+  }
+
+  .logo {
+    height: 100px;
+    img {
+      width: 100%;
+      height: 90px;
+    }
+  }
+
+  /* Ẩn nút menu mobile ở desktop */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f08787;
+  }
+
+  /* Ẩn menu mobile ở desktop */
+  .mobile-menu {
+    display: none;
+  }
+
+  /* 📱 Responsive */
+  @media (max-width: 1024px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    /* Ẩn menu trái phải khi ở mobile */
+    .nav-menu.left,
+    .nav-menu.right {
+      display: none;
+    }
+
+    /* Logo chính giữa */
+    .logo {
+      position: relative;
+      left: -12px;
+      transform: none;
+      margin: 0 auto;
+    }
+
+    /* Mobile menu xổ xuống */
+    .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 999;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+
+      li {
+        border: 1px solid #ccc;
+        padding: 0.6rem;
+        background-color: rgba(255, 138, 138, 0.3);
+        border-radius: 12px;
+      }
+    }
+
+    .mobile-menu li a {
+      flex-direction: row;
+      gap: 10px;
+      font-size: 16px;
+
+      svg {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #666;
+  font-family: "Pretendard Variable";
+}
