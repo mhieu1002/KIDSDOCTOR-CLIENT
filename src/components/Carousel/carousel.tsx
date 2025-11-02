@@ -6,7 +6,13 @@ export default function AppointmentSection() {
     <section className="appointment-section">
       <div className="banner">
         <img src={banner} alt="Doctor and Kid" className="banner-bg" />
-        <button className="book-btn">Đặt Lịch Khám →</button>
+        <a
+          href="https://zalo.me/0878879188"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="book-btn">Đặt Lịch Khám →</button>
+        </a>
       </div>
 
       <div className="open-time-card" id="lich-kham-benh">
@@ -21,8 +27,8 @@ export default function AppointmentSection() {
                 justifyContent: "center",
               }}
             >
-              <strong>Thứ Hai đến Thứ Bảy</strong>
-              <p>Thời gian khám từ: 17h00 – 20h00</p>
+              <strong>Phòng Khám Nhi KIDS DOCTOR</strong>
+              <p>Thời gian khám từ: 17:00 – 20:00</p>
             </div>
           </div>
           <div className="time-item">
@@ -34,8 +40,8 @@ export default function AppointmentSection() {
                 justifyContent: "center",
               }}
             >
-              <strong>Chủ Nhật</strong>
-              <p>Thời gian khám từ: 17h00 – 20h00</p>
+              <strong>Nhà Thuốc DR.HEALTHYCARE</strong>
+              <p>Thời gian mở cửa từ: 07:30 – 20:00</p>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function DoctorTeam() {
   const doctors = [
     {
       id: 1,
-      name: "BS. BSCK1. NGUYỄN THỊ THẢO",
+      name: "BSCK1. NGUYỄN THỊ THẢO",
       specialty: "Bác sĩ Bệnh viện Nhi Đồng 2",
       skills: "Chuyên khoa ...",
       img: bsThao,

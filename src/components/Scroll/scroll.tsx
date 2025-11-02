@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tooltip } from "antd";
-import {
-  CalendarOutlined,
-  PhoneOutlined,
-  UpOutlined,
-} from "@ant-design/icons";
+import { CalendarOutlined, PhoneOutlined, UpOutlined } from "@ant-design/icons";
 import "./scroll.scss";
 
 const Scroll = () => {
@@ -29,7 +25,7 @@ const Scroll = () => {
   };
 
   const handleNavigate = () => {
-    navigate(`/kham-chua-benh/lich-kham-benh-tai-kham`);
+    navigate(`/lich-kham-benh`);
   };
 
   return (
@@ -43,7 +39,11 @@ const Scroll = () => {
           </Tooltip>
 
           <Tooltip title="Gọi điện">
-            <a href="tel:19001215">
+            <a
+              href="https://zalo.me/0878879188"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="button-scroll-item">
                 <PhoneOutlined />
               </button>

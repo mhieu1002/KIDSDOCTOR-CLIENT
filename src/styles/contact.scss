@@ -1,0 +1,41 @@
+.contact-overlay {
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 0;
+
+  @media (max-width: 1230px) {
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+  }
+}
+
+.contact-content {
+  h2 {
+    color: #ffa4a4;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: Sedgwick Ave Display, cursive;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 2;
+    margin: 5px 0;
+  }
+}
+
+.contact-map {
+  flex: 1;
+  min-width: 500px;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border-radius: 8px;
+  }
+}
