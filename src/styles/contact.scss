@@ -15,14 +15,16 @@
 .contact-content {
   h2 {
     color: #ffa4a4;
-    font-size: 48px;
+    font-size: 50px;
     font-weight: 600;
     margin-bottom: 30px;
     font-family: Sedgwick Ave Display, cursive;
   }
 
   p {
-    font-size: 18px;
+    color: #f75270;
+    font-weight: bold;
+    font-size: 20px;
     line-height: 2;
     margin: 5px 0;
   }
@@ -31,6 +33,11 @@
 .contact-map {
   flex: 1;
   min-width: 500px;
+  width: 100%;
+
+  @media (max-width: 576px) {
+    min-width: 100% !important;
+  }
 
   iframe {
     width: 100%;
