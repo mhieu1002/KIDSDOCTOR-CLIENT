@@ -2,7 +2,7 @@ import noiNhi from "../assets/noi-nhi-1.jpg";
 import ngoaiNhi from "../assets/ngoai-nhi-2.jpg";
 import dinhDuong from "../assets/dinh-duong-1.jpg";
 import khiDung from "../assets/phun-khi-dung-1.jpg";
-import ruaMui from "../assets/hut-dam-nhot1.jpg";
+// import ruaMui from "../assets/hut-dam-nhot1.jpg";
 import vltl from "../assets/vat-ly.jpg";
 import thayBang from "../assets/rua-vet-thuong-1.jpg";
 import quiDau from "../assets/nong-dau-1.jpg";
