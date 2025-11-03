@@ -7,6 +7,7 @@ import Scroll from "./components/Scroll/scroll";
 import Timetable from "./pages/Timetable";
 import Contact from "./pages/Contact";
 import MedicalServices from "./pages/MedicalServices";
+import Medical from "./pages/Medical";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/lich-kham-benh" element={<Timetable />} />
-          <Route path="/kien-thuc-y-hoc" element={<div>Kiến thức y học</div>} />
+          <Route path="/kien-thuc-y-khoa" element={<Medical />} />
           <Route path="/dich-vu-y-te" element={<MedicalServices />} />
           <Route path="/lien-he" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

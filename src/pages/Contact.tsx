@@ -1,8 +1,30 @@
+import { Helmet } from "react-helmet-async";
 import "../styles/contact.scss";
 
 export default function Contact() {
   return (
     <div>
+      <Helmet>
+        <title>Liên hệ - Phòng khám Nhi KidsDoctor</title>
+        <meta
+          name="description"
+          content="Liên hệ Phòng khám Nhi KidsDoctor để được tư vấn và đặt lịch khám cho bé nhanh chóng. Đội ngũ bác sĩ Nhi nhiều năm kinh nghiệm từ Bệnh viện Nhi Đồng 2, tận tâm và chuyên nghiệp."
+        />
+        <meta
+          name="keywords"
+          content="liên hệ phòng khám nhi, phòng khám kids doctor, đặt lịch khám nhi, bác sĩ nhi đồng 2, khám nhi quận 9, phòng khám trẻ em, tư vấn sức khỏe trẻ em"
+        />
+        <meta name="author" content="Phòng khám Nhi KidsDoctor" />
+        <meta property="og:title" content="Phòng khám Nhi KidsDoctor" />
+        <meta
+          property="og:description"
+          content="Phòng khám chuyên khoa Nhi với đội ngũ bác sĩ từ Bệnh viện Nhi Đồng 2 - tận tâm, chuyên nghiệp và thân thiện với trẻ nhỏ."
+        />
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://www.kidsdoctor.vn/" />
+              <meta property="og:image" content="/logo192.png" />
+              <link rel="canonical" href="https://www.kidsdoctor.vn/" /> */}
+      </Helmet>
       <div className="p-4">
         <div className="contact-overlay">
           <div className="contact-wrapper">
@@ -16,7 +38,7 @@ export default function Contact() {
                 Số điện thoại:{" "}
                 <a
                   href="tel:0878879188"
-                  style={{ color: "#000", textDecoration: "none" }}
+                  style={{ color: "#7a7a7a", textDecoration: "none" }}
                 >
                   0878 879 188
                 </a>
@@ -25,7 +47,7 @@ export default function Contact() {
                 Email:{" "}
                 <a
                   href="mailto:pkkidsdoctor@gmail.com"
-                  style={{ color: "#000", textDecoration: "none" }}
+                  style={{ color: "#7a7a7a", textDecoration: "none" }}
                 >
                   pkkidsdoctor@gmail.com
                 </a>
@@ -34,7 +56,7 @@ export default function Contact() {
                 Website:{" "}
                 <a
                   href="https://www.facebook.com/phongkhamnhikhoaquan9/?locale=vi_VN"
-                  style={{ color: "#000", textDecoration: "none" }}
+                  style={{ color: "#7a7a7a", textDecoration: "none" }}
                 >
                   https://www.facebook.com/phongkhamnhikhoaquan9
                 </a>
