@@ -52,7 +52,7 @@ export default function Contact() {
                   pkkidsdoctor@gmail.com
                 </a>
               </p>
-              <p>
+              {/* <p>
                 Website:{" "}
                 <a
                   href="https://www.facebook.com/phongkhamnhikhoaquan9/?locale=vi_VN"
@@ -60,7 +60,7 @@ export default function Contact() {
                 >
                   https://www.facebook.com/phongkhamnhikhoaquan9
                 </a>
-              </p>
+              </p> */}
             </div>
 
             <div className="contact-map">
