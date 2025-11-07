@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 import type { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 import { BASE_URL } from "../../constants";
 import Cookies from "js-cookie";

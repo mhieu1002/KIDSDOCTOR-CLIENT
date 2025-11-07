@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
 import { categoryApi } from "../apis/modules/categoryApi";
-import { IQueryCategory, TPostCategoryDTO } from "../apis/modules/categoryApi";
+import type { IQueryCategory, TPostCategoryDTO } from "../apis/modules/categoryApi";
 
 const useCategory = (payload: IQueryCategory) => {
   //getAll + search

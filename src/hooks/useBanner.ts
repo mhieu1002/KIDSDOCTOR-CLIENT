@@ -1,7 +1,8 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { bannerApi, IQueryBanner, TBannerDTO } from "../apis/modules/bannerApi";
+import { bannerApi } from "../apis/modules/bannerApi";
+import type { IQueryBanner, TBannerDTO } from "../apis/modules/bannerApi";
 
 const useBanner = (payload: IQueryBanner) => {
   //getAll

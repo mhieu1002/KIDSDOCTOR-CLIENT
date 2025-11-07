@@ -1,0 +1,50 @@
+.doctor-detail {
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 0;
+
+  .doctor-info {
+    h2 {
+      margin-bottom: 30px;
+      color: rgba(232, 152, 138, 1);
+      font-size: 35px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+    }
+
+    p {
+      position: relative;
+      line-height: 2;
+      text-align: justify;
+      padding-left: 28px; // tạo khoảng trống để chấm không đè lên text
+      font-size: 16px;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 15px;
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+}

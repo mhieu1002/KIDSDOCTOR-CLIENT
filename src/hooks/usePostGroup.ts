@@ -1,7 +1,8 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { IQueryPostGroup, postGroupApi, TPostGroupDTO } from "../apis/modules/postGroupApi";
+import type { IQueryPostGroup, TPostGroupDTO } from "../apis/modules/postGroupApi";
+import {  postGroupApi } from "../apis/modules/postGroupApi";
 
 
 const usePostGroup = (payload: IQueryPostGroup) => {

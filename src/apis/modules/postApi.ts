@@ -1,7 +1,7 @@
 import qs from "querystringify";
 import axiosInstance from "../configs/apiConfig";
-import { PostsDTO } from "../../types/postType";
-import { IQueryParams } from "../../types/commonType";
+import type { PostsDTO } from "../../types/postType";
+import type { IQueryParams } from "../../types/commonType";
 
 export type isActive = {
   isActive: boolean;

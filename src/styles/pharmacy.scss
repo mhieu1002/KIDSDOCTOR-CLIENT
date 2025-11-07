@@ -1,0 +1,253 @@
+.pharmacy-section {
+  padding: 40px 20px;
+  background: #fafafa;
+
+  .heading {
+    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #444;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    .line {
+      width: 60px;
+      height: 2px;
+      background: #ffa4a4;
+      margin: 10px auto 0;
+    }
+  }
+
+  .pharmacy-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px; // nới rộng thêm
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 230px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e68a8a;
+      margin-bottom: 12px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.2s;
+
+      &:focus {
+        border-color: #ffa4a4;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 10px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+        color: #444;
+        font-weight: 500;
+
+        &:hover {
+          background: #ffe5e5;
+        }
+
+        &.active {
+          background: #ffbdbd;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  /* Danh sách sản phẩm */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 👉 5 sản phẩm mỗi hàng */
+    gap: 20px;
+    flex: 1;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .img-box {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .product-info {
+      flex-grow: 1;
+
+      h4 {
+        font-size: 15px;
+        color: #333;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 40px;
+        margin-bottom: 8px;
+      }
+
+      .pack,
+      .country {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 4px;
+      }
+
+      .price {
+        font-weight: 700;
+        color: #e68a8a;
+        margin-top: 8px;
+      }
+    }
+
+    .detail-btn {
+      margin-top: 12px;
+      background: #ffa4a4;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: 0.2s;
+
+      &:hover {
+        background: #ff7b7b;
+      }
+    }
+  }
+}
+
+.fix-pharamacy {
+  @media (max-width: 500px) {
+    display: block !important;
+  }
+}
+@media (min-width: 1024px) {
+  .category-select-mobile {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .pharmacy-container {
+    flex-direction: column;
+  }
+
+  /* Ẩn sidebar danh sách, chỉ hiện dropdown */
+  .sidebar {
+    width: 100%;
+
+    .category-list {
+      display: none; // ẩn danh mục dạng list
+    }
+
+    .category-select-mobile {
+      display: block;
+      margin-bottom: 12px;
+
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+    }
+  }
+
+  /* Sản phẩm full width */
+  .product-list {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr); // iPad: 3 sản phẩm / hàng
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); // mobile: 2 sản phẩm / hàng
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list {
+    grid-template-columns: 1fr; // mobile nhỏ: 1 sản phẩm / hàng
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-bottom: 12px;
+    width: 50% !important;
+  }
+}

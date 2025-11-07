@@ -1,32 +1,50 @@
 import "./doctor.scss";
-import bsThao from "../../assets/hinh-bs-thao.jpg";
-import bsTuyen from "../../assets/hinh-bs-tuyen.jpg";
-import bsBinh from "../../assets/hinh-bs-binh.jpg";
+import { useNavigate } from "react-router-dom";
+import { useDoctor } from "../../hooks/useDoctor";
+import type { TUseDoctorDto } from "../../hooks/useDoctor";
+import { BASE_URL } from "../../constants";
 
 export default function DoctorTeam() {
-  const doctors = [
-    {
-      id: 1,
-      name: "BS.CK1. NGUYỄN THỊ THẢO",
-      specialty: "Bác sĩ Bệnh viện Nhi Đồng 2",
-      skills: "Chuyên khoa ...",
-      img: bsThao,
-    },
-    {
-      id: 2,
-      name: "ThS.BS.CK1. HOÀNG MINH TUYỀN",
-      specialty: "Bác sĩ Bệnh viện Nhi Đồng 2",
-      skills: "Chuyên khoa Thận - Nội Tiết.",
-      img: bsTuyen,
-    },
-    {
-      id: 3,
-      name: "ThS.BS.CK1. THANH BÌNH",
-      specialty: "Bác sĩ chuyên khoa",
-      skills: "...",
-      img: bsBinh,
-    },
-  ];
+  const navigate = useNavigate();
+
+  const { doctors, isLoading } = useDoctor({
+    page: 1,
+    pageSize: 1000,
+    keyword: "",
+  } as TUseDoctorDto);
+
+  const doctorList =
+    doctors?.data?.allDoctor?.filter((doctor: any) => doctor.status === true) ??
+    [];
+
+  const handleViewDetail = (doctor: any) => {
+    const slug = doctor.name
+      ?.toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+    navigate(`/bac-si/${doctor.id}-${slug}`);
+  };
+
+  if (isLoading) {
+    return (
+      <section className="doctor-team">
+        <div className="container">
+          <div className="heading">
+            <h2>Đội Ngũ Chuyên Gia</h2>
+            <p>Bé được chăm sóc bởi những bác sĩ hàng đầu</p>
+            <div className="line"></div>
+          </div>
+          <div className="doctor-list">
+            <div>Đang tải danh sách bác sĩ...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="doctor-team">
@@ -38,16 +56,24 @@ export default function DoctorTeam() {
         </div>
 
         <div className="doctor-list">
-          {doctors.map((doctor) => (
+          {doctorList.map((doctor: any) => (
             <div className="doctor-card" key={doctor.id}>
               <div className="doctor-img">
-                <img src={doctor.img} alt={doctor.name} />
+                <img
+                  src={`${BASE_URL.BASE_URL_IMAGE}${doctor.image}`}
+                  alt={doctor.name}
+                />
               </div>
               <div className="doctor-info">
                 <h3>{doctor.name}</h3>
-                <p className="specialty">{doctor.specialty}</p>
-                <p className="skills">{doctor.skills}</p>
-                <button className="view-more">XEM THÊM</button>
+                <p className="specialty">{doctor.displayPosition}</p>
+                <p className="skills">{doctor.displaySpecialty}</p>
+                <button
+                  className="view-more"
+                  onClick={() => handleViewDetail(doctor)}
+                >
+                  XEM THÊM
+                </button>
               </div>
             </div>
           ))}

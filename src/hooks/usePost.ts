@@ -1,7 +1,13 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { displayTime, IQueryPost, isActive, postApi, TPostDTO } from "../apis/modules/postApi";
+import type {
+  displayTime,
+  IQueryPost,
+  isActive,
+  TPostDTO,
+} from "../apis/modules/postApi";
+import { postApi } from "../apis/modules/postApi";
 
 const usePosts = (payload: IQueryPost) => {
   //getAll + search
@@ -33,9 +39,7 @@ const usePosts = (payload: IQueryPost) => {
       return { data };
     },
     refetchOnWindowFocus: false,
-    enabled:
-      !isNil(payload.slug) ||
-      !isNil(payload.page) 
+    enabled: !isNil(payload.slug) || !isNil(payload.page),
   });
 
   //getById
@@ -45,7 +49,7 @@ const usePosts = (payload: IQueryPost) => {
       if (isNil(payload.id)) return null;
       const response = await postApi.getById(payload.id);
       const { data } = response;
-      console.log("🚀 ~ usePosts ~ data:", data)
+      console.log("🚀 ~ usePosts ~ data:", data);
       return { data };
     },
     refetchOnWindowFocus: false,
@@ -151,4 +155,3 @@ const usePosts = (payload: IQueryPost) => {
 };
 
 export { usePosts };
-

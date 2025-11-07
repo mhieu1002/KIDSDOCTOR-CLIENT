@@ -1,8 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { IQueryMedicineGroup, medicineGroupApi, TMedicineGroupDTO } from "../apis/modules/medicineGroupApi";
-
+import { medicineGroupApi } from "../apis/modules/medicineGroupApi";
+import type {
+  IQueryMedicineGroup,
+  TMedicineGroupDTO,
+} from "../apis/modules/medicineGroupApi";
 
 const useMedicineGroup = (payload: IQueryMedicineGroup) => {
   //getAll + search
@@ -13,7 +16,12 @@ const useMedicineGroup = (payload: IQueryMedicineGroup) => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["medicineGroups", payload.page, payload.pageSize, payload.keyword],
+    queryKey: [
+      "medicineGroups",
+      payload.page,
+      payload.pageSize,
+      payload.keyword,
+    ],
     queryFn: async () => {
       const response = await medicineGroupApi.getAllMedicineGroups({
         page: payload.page,
@@ -39,57 +47,60 @@ const useMedicineGroup = (payload: IQueryMedicineGroup) => {
   });
 
   //create
-  const { mutate: createMedicineGroup, data: resCreateMedicineGroup } = useMutation({
-    mutationFn: ({ payload }: { payload: TMedicineGroupDTO }) => {
-      // console.log("🚀 ~ useMedicineGroup ~ payload:", payload)
-      return medicineGroupApi.createMedicineGroup(payload);
-    },
-    onSuccess: (data) => {
-      refetch();
-      return data;
-    },
-    onError: (error) => {
-      message.error("Đã xảy ra lỗi");
-      return error;
-    },
-  });
+  const { mutate: createMedicineGroup, data: resCreateMedicineGroup } =
+    useMutation({
+      mutationFn: ({ payload }: { payload: TMedicineGroupDTO }) => {
+        // console.log("🚀 ~ useMedicineGroup ~ payload:", payload)
+        return medicineGroupApi.createMedicineGroup(payload);
+      },
+      onSuccess: (data) => {
+        refetch();
+        return data;
+      },
+      onError: (error) => {
+        message.error("Đã xảy ra lỗi");
+        return error;
+      },
+    });
 
   //update
-  const { mutate: updateMedicineGroup, data: resUpdateMedicineGroup } = useMutation({
-    mutationFn: ({
-      id,
-      payload,
-    }: {
-      id: number;
-      payload: TMedicineGroupDTO;
-    }) => {
-      return medicineGroupApi.updateMedicineGroup(id, payload);
-    },
-    onSuccess: (data) => {
-      refetch();
-      return data;
-    },
-    onError: (error) => {
-      message.error("Đã xảy ra lỗi");
-      return error;
-    },
-  });
+  const { mutate: updateMedicineGroup, data: resUpdateMedicineGroup } =
+    useMutation({
+      mutationFn: ({
+        id,
+        payload,
+      }: {
+        id: number;
+        payload: TMedicineGroupDTO;
+      }) => {
+        return medicineGroupApi.updateMedicineGroup(id, payload);
+      },
+      onSuccess: (data) => {
+        refetch();
+        return data;
+      },
+      onError: (error) => {
+        message.error("Đã xảy ra lỗi");
+        return error;
+      },
+    });
 
   //delete
-  const { mutate: deleteMedicineGroup, data: resDeleteMedicineGroup } = useMutation({
-    mutationFn: (id: number) => {
-      return medicineGroupApi.deleteMedicineGroup(id);
-    },
-    onSuccess: (data) => {
-      refetch();
-      message.success("Xoá bác sĩ thành công");
-      return data;
-    },
-    onError: (error) => {
-      message.error("Đã xảy ra lỗi");
-      return error;
-    },
-  });
+  const { mutate: deleteMedicineGroup, data: resDeleteMedicineGroup } =
+    useMutation({
+      mutationFn: (id: number) => {
+        return medicineGroupApi.deleteMedicineGroup(id);
+      },
+      onSuccess: (data) => {
+        refetch();
+        message.success("Xoá bác sĩ thành công");
+        return data;
+      },
+      onError: (error) => {
+        message.error("Đã xảy ra lỗi");
+        return error;
+      },
+    });
 
   return {
     refetch,
@@ -103,7 +114,7 @@ const useMedicineGroup = (payload: IQueryMedicineGroup) => {
     error,
     resCreateMedicineGroup,
     resUpdateMedicineGroup,
-    resDeleteMedicineGroup
+    resDeleteMedicineGroup,
   };
 };
 

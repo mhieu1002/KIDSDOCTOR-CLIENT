@@ -8,6 +8,10 @@ import Timetable from "./pages/Timetable";
 import Contact from "./pages/Contact";
 import MedicalServices from "./pages/MedicalServices";
 import Medical from "./pages/Medical";
+import DoctorDetail from "./pages/DoctorDetail";
+import Pharmacy from "./pages/Pharmacy";
+import PostDetail from "./pages/PostDetail";
+import MedicineDetail from "./pages/PharmacyDetail";
 
 export default function App() {
   return (
@@ -20,7 +24,11 @@ export default function App() {
           <Route path="/kien-thuc-y-khoa" element={<Medical />} />
           <Route path="/dich-vu-y-te" element={<MedicalServices />} />
           <Route path="/lien-he" element={<Contact />} />
+          <Route path="/nha-thuoc" element={<Pharmacy />} />
+          <Route path="/bac-si/:slug" element={<DoctorDetail />} />
+          <Route path="/bai-viet/:slug" element={<PostDetail />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/thuoc/:id" element={<MedicineDetail />} />
         </Route>
       </Routes>
       <Scroll />

@@ -1,7 +1,9 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { TDoctorDTO, doctorApi } from "../apis/modules/doctorApi";
+import { doctorApi } from "../apis/modules/doctorApi";
+import type { TDoctorDTO } from "../apis/modules/doctorApi";
+
 
 export type TUseDoctorDto = {
   id?: number;

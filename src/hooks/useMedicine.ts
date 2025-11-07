@@ -1,7 +1,8 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { message } from "antd";
 import { isNil } from "lodash";
-import { IQueryMedicine, medicineApi, TMedicineDTO } from "../apis/modules/medicineApi";
+import { medicineApi } from "../apis/modules/medicineApi";
+import type { IQueryMedicine, TMedicineDTO } from "../apis/modules/medicineApi";
 
 const useMedicine = (payload: IQueryMedicine) => {
   //getAll + search
@@ -40,7 +41,7 @@ const useMedicine = (payload: IQueryMedicine) => {
   //create
   const { mutate: createMedicine, data: resCreateMedicine } = useMutation({
     mutationFn: ({ payload }: { payload: TMedicineDTO }) => {
-      console.log("🚀 ~ useMedicine ~ payload:", payload)
+      console.log("🚀 ~ useMedicine ~ payload:", payload);
       return medicineApi.createMedicine(payload);
     },
     onSuccess: (data) => {
@@ -55,13 +56,7 @@ const useMedicine = (payload: IQueryMedicine) => {
 
   //update
   const { mutate: updateMedicine, data: resUpdateMedicine } = useMutation({
-    mutationFn: ({
-      id,
-      payload,
-    }: {
-      id: number;
-      payload: TMedicineDTO;
-    }) => {
+    mutationFn: ({ id, payload }: { id: number; payload: TMedicineDTO }) => {
       return medicineApi.updateMedicine(id, payload);
     },
     onSuccess: (data) => {
@@ -102,9 +97,8 @@ const useMedicine = (payload: IQueryMedicine) => {
     error,
     resCreateMedicine,
     resUpdateMedicine,
-    resDeleteMedicine
+    resDeleteMedicine,
   };
 };
 
 export { useMedicine };
-

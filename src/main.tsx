@@ -6,11 +6,16 @@ import "antd/dist/reset.css";
 import "./styles/index.scss";
 import { ConfigProvider } from "antd";
 import { kidsTheme } from "./themes/antdTheme.ts";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
-    <ConfigProvider locale={vi_VN} theme={kidsTheme}>
-      <App />
-    </ConfigProvider>
+    <QueryClientProvider client={queryClient}>
+      <ConfigProvider locale={vi_VN} theme={kidsTheme}>
+        <App />
+      </ConfigProvider>
+    </QueryClientProvider>
   </HelmetProvider>
 );

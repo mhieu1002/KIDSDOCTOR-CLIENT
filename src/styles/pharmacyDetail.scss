@@ -1,0 +1,76 @@
+.medicine-detail-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
+
+  .back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ff7b7b;
+  }
+
+  .medicine-detail {
+    display: flex;
+    gap: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    .image-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        object-fit: contain;
+      }
+    }
+
+    .info-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      p {
+        margin: 6px 0;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .content-section {
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    h3 {
+      margin-top: 15px;
+      color: #ff7b7b;
+    }
+
+    p {
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .medicine-detail {
+      flex-direction: column;
+    }
+  }
+}

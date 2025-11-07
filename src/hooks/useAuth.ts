@@ -2,7 +2,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 import { authApi } from "../apis/modules/authApi";
-import { LoginDTO } from "../types/authType";
+import type { LoginDTO } from "../types/authType";
 
 const useAuth = () => {
   const { mutate: login, data: resLogin } = useMutation({
