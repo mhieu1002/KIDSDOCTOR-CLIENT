@@ -76,7 +76,7 @@ export default function PostDetail() {
                 <div
                   key={item.id}
                   className="related-card"
-                  onClick={() => navigate(`/dich-vu/${newSlug}`)}
+                  onClick={() => navigate(`/bai-viet/${newSlug}`)}
                 >
                   <img
                     src={`${BASE_URL.BASE_URL_IMAGE}${item.thumbnail.replace(/\\/g, "/")}`}

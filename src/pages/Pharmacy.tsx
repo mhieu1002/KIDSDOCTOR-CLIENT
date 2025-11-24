@@ -5,15 +5,17 @@ import "../styles/pharmacy.scss";
 import { useMedicine } from "../hooks/useMedicine";
 import { useMedicineGroup } from "../hooks/useMedicineGroup";
 import { BASE_URL } from "../constants";
+import { Pagination } from "antd";
 
 export default function Pharmacy() {
   const navigate = useNavigate();
 
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [search, setSearch] = useState("");
-  const [page] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 32; // mỗi trang chứa 32 sản phẩm
 
-  // ✅ Lấy danh mục thuốc từ API
+  // Lấy danh mục thuốc
   const { medicineGroups } = useMedicineGroup({
     page: 1,
     pageSize: 100,
@@ -22,28 +24,47 @@ export default function Pharmacy() {
 
   const categories = [
     "Tất cả",
-    ...(medicineGroups?.data.allMedicineGroups.map((g: any) => g.name) || []),
+    ...(medicineGroups?.data.allMedicineGroups
+      .filter((g: any) => g.status === true)
+      .map((g: any) => g.name) || []),
   ];
 
-  // ✅ Lấy danh sách thuốc từ API
+  // Lấy danh sách thuốc
   const { medicines, isLoading } = useMedicine({
-    page,
-    pageSize: 100,
+    page: 1,
+    pageSize: 1000,
     keyword: search,
   });
 
   const productList = medicines?.data.allMedicine || [];
 
-  // ✅ Lọc theo category đúng key `group.name`
+  // Lọc sản phẩm
   const filteredProducts = productList.filter(
     (p: any) =>
-      p.status === true && // 👈 chỉ lấy thuốc có status = true
+      p.status === true &&
+      p.group?.status === true &&
       (selectedCategory === "Tất cả" || p.group?.name === selectedCategory)
   );
 
+  // Reset về trang 1 khi đổi danh mục hoặc tìm kiếm
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handleSearch = (e: any) => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
+  };
+
+  // Cắt phân trang
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const paginatedProducts = filteredProducts.slice(start, end);
+
   return (
     <>
-      {/* Giới thiệu nhà thuốc */}
+      {/* Info */}
       <section className="about-section" style={{ backgroundColor: "#fff" }}>
         <div className="about-container">
           <div className="about-content">
@@ -51,14 +72,7 @@ export default function Pharmacy() {
             <p>
               <strong>Nhà thuốc Tây DR.HEALTHYCARE</strong> với các{" "}
               <strong>Dược sĩ Đại học</strong> tư vấn trực tiếp cùng toàn thể
-              điều dưỡng nhiều kinh nghiệm, tâm huyết và yêu trẻ, sẽ mang đến
-              chất lượng phục vụ ngoài mong đợi cho quý vị{" "}
-              <strong>Nhà thuốc tây DR.HEALTHYCARE</strong> phục vụ sức khỏe
-              cộng đồng (người lớn và trẻ em) với chất lượng tốt nhất và giá cả
-              hợp lý. Đội ngũ nhân viên, tư vấn, trình dược viên tại nhà thuốc
-              đều là những người có trình độ chuyên môn sâu được đào tạo bài bản
-              tại <strong>trường ĐH Y Dược TPHCM</strong> và có kinh nghiệm lâu
-              năm trong ngành Dược.
+              điều dưỡng nhiều kinh nghiệm...
             </p>
           </div>
           <div className="about-image">
@@ -67,24 +81,23 @@ export default function Pharmacy() {
         </div>
       </section>
 
-      {/* Danh sách thuốc */}
-      {/* Danh sách thuốc */}
+      {/* Sản phẩm */}
       <section className="pharmacy-section">
         <div className="heading">
           <h2>Sản phẩm Thuốc</h2>
           <div className="line"></div>
         </div>
+
         <div className="pharmacy-container fix-pharamacy">
           {/* Sidebar */}
-
           <aside className="sidebar">
             <h3>Danh mục thuốc</h3>
 
-            {/* Dropdown cho Tablet/Mobile */}
+            {/* Dropdown mobile */}
             <div className="category-select-mobile">
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => handleCategoryChange(e.target.value)}
               >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>
@@ -94,12 +107,12 @@ export default function Pharmacy() {
               </select>
             </div>
 
-            {/* Input search */}
+            {/* Tìm kiếm */}
             <input
               type="text"
               placeholder="Tìm tên thuốc..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={handleSearch}
             />
 
             {/* Menu Desktop */}
@@ -108,7 +121,7 @@ export default function Pharmacy() {
                 <li
                   key={cat}
                   className={selectedCategory === cat ? "active" : ""}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                 >
                   {cat}
                 </li>
@@ -116,25 +129,23 @@ export default function Pharmacy() {
             </ul>
           </aside>
 
-          {/* List sản phẩm */}
+          {/* Product List */}
           <div className="product-list">
             {isLoading && <p>⏳ Đang tải thuốc...</p>}
             {!isLoading && filteredProducts.length === 0 && (
               <p>⚠ Không có sản phẩm phù hợp</p>
             )}
 
-            {filteredProducts.map((p: any) => (
+            {paginatedProducts.map((p: any) => (
               <div className="product-card" key={p.id}>
                 <div className="img-box">
                   <img
                     src={`${BASE_URL.BASE_URL_IMAGE}${p.image}`}
-                    alt={p.title}
+                    alt={p.name}
                   />
                 </div>
                 <div className="product-info">
                   <h4>{p.name}</h4>
-
-                  {/* ✅ sửa field đúng theo API */}
                   <p className="pack">Quy cách: {p.packaging}</p>
                   <p className="country">Xuất xứ: {p.manufacturingCountry}</p>
                 </div>
@@ -148,6 +159,14 @@ export default function Pharmacy() {
             ))}
           </div>
         </div>
+        {/* Pagination */}
+        <Pagination
+          current={currentPage}
+          pageSize={pageSize}
+          total={filteredProducts.length}
+          onChange={(page) => setCurrentPage(page)}
+          className="pagination-box"
+        />
       </section>
     </>
   );

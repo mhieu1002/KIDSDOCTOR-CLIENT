@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Tooltip } from "antd";
-import { CalendarOutlined, PhoneOutlined, UpOutlined } from "@ant-design/icons";
+import { UpOutlined } from "@ant-design/icons";
 import "./scroll.scss";
 
 const Scroll = () => {
-  const navigate = useNavigate();
   const [backToTopButton, setBackToTopButton] = useState(false);
 
   useEffect(() => {
@@ -24,21 +21,17 @@ const Scroll = () => {
     });
   };
 
-  const handleNavigate = () => {
-    navigate(`/lich-kham-benh`);
-  };
-
   return (
     <div>
       {backToTopButton && (
         <div className="button-scroll">
-          <Tooltip title="Lịch khám bệnh / Tái khám">
+          {/* <Tooltip title="Lịch khám bệnh / Tái khám">
             <button className="button-scroll-item" onClick={handleNavigate}>
               <CalendarOutlined />
             </button>
-          </Tooltip>
+          </Tooltip> */}
 
-          <Tooltip title="Gọi điện">
+          {/* <Tooltip title="Gọi điện">
             <a
               href="https://zalo.me/0878879188"
               target="_blank"
@@ -48,7 +41,7 @@ const Scroll = () => {
                 <PhoneOutlined />
               </button>
             </a>
-          </Tooltip>
+          </Tooltip> */}
 
           <button className="button-scroll-item" onClick={scrollUp}>
             <UpOutlined />

@@ -7,6 +7,7 @@ import "./styles/index.scss";
 import { ConfigProvider } from "antd";
 import { kidsTheme } from "./themes/antdTheme.ts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const queryClient = new QueryClient();
 

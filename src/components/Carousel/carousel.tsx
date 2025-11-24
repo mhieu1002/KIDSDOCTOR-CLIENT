@@ -19,7 +19,7 @@ export default function AppointmentSection() {
         <h2>Giờ Mở Cửa</h2>
         <div className="time-list">
           <div className="time-item">
-            <span className="icon">📅</span>
+            <span className="icon">🩺</span>
             <div
               style={{
                 display: "flex",
@@ -28,11 +28,11 @@ export default function AppointmentSection() {
               }}
             >
               <strong>Phòng Khám Nhi KIDS DOCTOR</strong>
-              <p>Thời gian khám từ: 17:00 – 20:00</p>
+              <p>Thời gian khám từ: 17:00 – 20:00 (T2 - CN)</p>
             </div>
           </div>
           <div className="time-item">
-            <span className="icon">🕒</span>
+            <span className="icon">💊</span>
             <div
               style={{
                 display: "flex",
@@ -41,13 +41,13 @@ export default function AppointmentSection() {
               }}
             >
               <strong>Nhà Thuốc DR.HEALTHYCARE</strong>
-              <p>Thời gian mở cửa từ: 07:30 – 20:00</p>
+              <p>Thời gian mở cửa: 07:30 – 20:00 (T2 - T7)</p>
             </div>
           </div>
         </div>
         <div className="note-box">
           <p>
-            <span className="highlight">Bố mẹ các cháu vui lòng</span> thực hiện{" "}
+            <span className="highlight">Phụ huynh vui lòng</span> thực hiện{" "}
             <strong>“Đặt lịch khám”</strong>, giúp chủ động khám theo từng khung
             giờ. Xin cảm ơn!
           </p>

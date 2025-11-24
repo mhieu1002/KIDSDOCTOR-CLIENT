@@ -13,7 +13,7 @@ export default function AboutSection() {
           </div>
           <div className="about-content">
             <div style={{ display: "flex", alignItems: "center" }}>
-              <h2>Phòng Khám Chuyên Khoa Nhi KidsDoctor</h2>
+              <h2>Phòng Khám Chuyên Khoa Nhi Kids Doctor</h2>
               <img
                 src={logo}
                 alt="logo Kids Doctor"
