@@ -31,13 +31,13 @@
     .line {
       width: 60px;
       height: 2px;
-      background: #ffa4a4;
+      background: #f875aa;
       margin: 10px auto 0;
     }
   }
 
   .service-card {
-    border: 1px solid #ffa4a4;
+    border: 1px solid #FF8FB7;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
@@ -49,15 +49,15 @@
     height: 100%;
 
     &:nth-child(3n + 1) {
-      background-color: #f3e9dc; // Màu 1
+      background-color: rgba(255, 143, 183, 0.2); // Màu 1
     }
 
     &:nth-child(3n + 2) {
-      background-color: #deded1; // Màu 2
+      background-color: rgba(255, 143, 183, 0.2); // Màu 2
     }
 
     &:nth-child(3n + 3) {
-      background-color: #ffbdbd; // Màu 3
+      background-color: rgba(255, 143, 183, 0.2); // Màu 3
     }
 
     &:hover {

@@ -15,13 +15,13 @@
 
     p {
       font-size: 16px;
-      color: #444;
+      color: #333;
     }
 
     .line {
       width: 60px;
       height: 2px;
-      background: #ffa4a4;
+      background: #FF8FB7;
       margin: 10px auto 0;
     }
   }
@@ -44,7 +44,7 @@
     h3 {
       font-size: 18px;
       font-weight: 700;
-      color: #e68a8a;
+      color: #F875AA;
       margin-bottom: 12px;
     }
 
@@ -59,7 +59,7 @@
       transition: 0.2s;
 
       &:focus {
-        border-color: #ffa4a4;
+        border-color: #F875AA;
       }
     }
 
@@ -80,7 +80,7 @@
         }
 
         &.active {
-          background: #ffbdbd;
+          background: #F875AA;
           color: #fff;
         }
       }
@@ -172,8 +172,8 @@
     }
 
     .detail-btn {
-      margin-top: 12px;
-      background: #ffa4a4;
+      margin-top: 16px;
+      background: #F875AA;
       color: #fff;
       border: none;
       padding: 8px 12px;
@@ -181,6 +181,7 @@
       cursor: pointer;
       align-self: flex-end;
       transition: 0.2s;
+      font-size: 16px;
 
       &:hover {
         background: #ff7b7b;

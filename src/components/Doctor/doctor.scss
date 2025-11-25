@@ -31,7 +31,7 @@
     .line {
       width: 60px;
       height: 2px;
-      background: #ffa4a4;
+      background: #f875aa;
       margin: 10px auto 0;
     }
   }
@@ -96,7 +96,7 @@
       }
 
       .view-more {
-        background: #ffa4a4;
+        background: #F875AA;
         color: #fff;
         border: none;
         padding: 10px 16px;
@@ -104,14 +104,14 @@
         cursor: pointer;
         font-weight: 600;
         transition: 0.3s;
-        border: 1px solid #ffa4a4;
+        border: 1px solid #F875AA;
         font-size: 14px;
         margin-top: auto; // Đẩy nút xuống cuối
         align-self: flex-start;
 
         &:hover {
           background: #fff;
-          color: #ffa4a4;
+          color: #F875AA;
         }
       }
     }

@@ -72,7 +72,14 @@ export default function Pharmacy() {
             <p>
               <strong>Nhà thuốc Tây DR.HEALTHYCARE</strong> với các{" "}
               <strong>Dược sĩ Đại học</strong> tư vấn trực tiếp cùng toàn thể
-              điều dưỡng nhiều kinh nghiệm...
+              điều dưỡng nhiều kinh nghiệm, tâm huyết và yêu trẻ, sẽ mang đến
+              chất lượng phục vụ ngoài mong đợi cho quý vị{" "}
+              <strong>Nhà thuốc tây DR.HEALTHYCARE</strong> phục vụ sức khỏe
+              cộng đồng (người lớn và trẻ em) với chất lượng tốt nhất và giá cả
+              hợp lý. Đội ngũ nhân viên, tư vấn, trình dược viên tại nhà thuốc
+              đều là những người có trình độ chuyên môn sâu được đào tạo bài bản
+              tại <strong>trường ĐH Y Dược TPHCM</strong> và có kinh nghiệm lâu
+              năm trong ngành Dược.
             </p>
           </div>
           <div className="about-image">

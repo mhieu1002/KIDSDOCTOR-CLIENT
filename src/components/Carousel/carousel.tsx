@@ -48,8 +48,8 @@ export default function AppointmentSection() {
         <div className="note-box">
           <p>
             <span className="highlight">Phụ huynh vui lòng</span> thực hiện{" "}
-            <strong>“Đặt lịch khám”</strong>, giúp chủ động khám theo từng khung
-            giờ. Xin cảm ơn!
+            <strong style={{ color: "#e72929" }}>“Đặt lịch khám”</strong>, giúp
+            chủ động khám theo từng khung giờ. Xin cảm ơn!
           </p>
         </div>
       </div>
