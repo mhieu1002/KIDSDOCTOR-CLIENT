@@ -103,7 +103,8 @@ export default function PharmacyDetail() {
             <strong>Quy cách:</strong> {data.packaging}
           </p>
           <p>
-            <strong>Thành phần:</strong> {data.composition}
+            <strong style={{ lineHeight: "1.5" }}>Thành phần:</strong>{" "}
+            {data.composition}
           </p>
         </div>
       </div>
