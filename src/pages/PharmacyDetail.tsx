@@ -23,7 +23,18 @@ export default function PharmacyDetail() {
     );
 
   const pageUrl = `https://kidsdoctor.vn/thuoc/${id}`;
-  const ogImage = `${BASE_URL.BASE_URL_IMAGE}${data.image}` || "/default-og.jpg";
+  const ogImage =
+    `${BASE_URL.BASE_URL_IMAGE}${data.image}` || "/default-og.jpg";
+
+  const renderTextBlock = (text: string) =>
+    text
+      ?.split("\n")
+      .filter((line) => line.trim() !== "")
+      .map((line, index) => (
+        <p key={index} className="bullet-line">
+          {line}
+        </p>
+      ));
 
   return (
     <div className="medicine-detail-container">
@@ -70,7 +81,10 @@ export default function PharmacyDetail() {
 
       <div className="medicine-detail">
         <div className="image-section">
-          <img src={`${BASE_URL.BASE_URL_IMAGE}${data.image}`} alt={data.name} />
+          <img
+            src={`${BASE_URL.BASE_URL_IMAGE}${data.image}`}
+            alt={data.name}
+          />
         </div>
 
         <div className="info-section">
@@ -96,16 +110,16 @@ export default function PharmacyDetail() {
 
       <div className="content-section">
         <h3>Mô tả</h3>
-        <p>{data.description}</p>
+        <p>{renderTextBlock(data.description)}</p>
 
         <h3>Chỉ định</h3>
-        <p>{data.indications}</p>
+        <p>{renderTextBlock(data.indications)}</p>
 
         <h3>Liều dùng</h3>
-        <p>{data.dosage}</p>
+        <p>{renderTextBlock(data.dosage)}</p>
 
         <h3>Chống chỉ định</h3>
-        <p>{data.contraindications}</p>
+        <p>{renderTextBlock(data.contraindications)}</p>
       </div>
     </div>
   );
