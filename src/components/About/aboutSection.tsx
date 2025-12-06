@@ -1,6 +1,6 @@
 import "./aboutSection.scss";
 import logo from "../../assets/logo.png";
-import hinhPK from "../../assets/hinh-phong-kham.jpg";
+import hinhPK from "../../assets/hinh-phong-kham.png";
 
 export default function AboutSection() {
   return (
@@ -13,7 +13,7 @@ export default function AboutSection() {
           </div>
           <div className="about-content">
             <div style={{ display: "flex", alignItems: "center" }}>
-              <h2>Phòng Khám Chuyên Khoa Nhi Kids Doctor</h2>
+              <h2>Phòng Khám Nhi Kids Doctor</h2>
               <img
                 src={logo}
                 alt="logo Kids Doctor"
@@ -22,20 +22,28 @@ export default function AboutSection() {
             </div>
             <p>
               <strong>PHÒNG KHÁM NHI KIDS DOCTOR</strong> gồm các Bác sĩ đang
-              công tác tại{" "}
-              <strong>Bệnh viện NHI ĐỒNG 1, Bệnh viện NHI ĐỒNG 2,</strong> có
-              kinh nghiệm khám, chữa bệnh lâu năm cho cả trẻ em và trẻ sơ sinh,
-              chúng tôi hiểu và chia sẻ những nỗi lo của ông bà/cha mẹ khi trẻ
-              bệnh, những khó chịu trẻ phải trải qua, và từng giai đoạn phát
-              triển của trẻ. Với đầy đủ Chuyên ngành{" "}
+              công tác tại <strong>Phòng Khám Nhi Kids Doctor </strong> quy tụ
+              các bác sĩ giàu kinh nghiệm từ
+              <strong> Bệnh viện Nhi Đồng 1 và Nhi Đồng 2, </strong> chuyên khám
+              và điều trị cho trẻ sơ sinh – trẻ nhỏ.
+            </p>
+            <p>
+              Chúng tôi cung cấp các dịch vụ chuyên sâu:{" "}
               <strong>
-                HÔ HẤP, TIÊU HOÁ, THẬN TIẾT NIỆU, HEN – DỊ ỨNG, TƯ VẤN DINH
-                DƯỠNG – CHỦNG NGỪA;
-              </strong>{" "}
-              cùng đầy đủ phương tiện khám bệnh cũng như khu vui chơi rộng rãi,
-              thoáng mát, hệ thống lưu trữ thông tin về tình trạng sức khỏe của
-              trẻ, chúng tôi hi vọng sẽ là nơi chăm sóc sức khỏe toàn diện cho
-              con của bạn.
+                Hô hấp, Tiêu hoá, Thận – Tiết niệu, Hen – Dị ứng miễn dịch, Tư
+                vấn Dinh dưỡng và Tiêm chủng.
+              </strong>
+            </p>
+            <p>
+              Phòng khám được thiết kế{" "}
+              <strong>thân thiện – thoáng mát – có khu vui chơi, </strong> giúp
+              bé thoải mái khi thăm khám. Hệ thống lưu trữ thông tin sức khỏe
+              hiện đại hỗ trợ theo dõi lâu dài.
+            </p>
+            <p>
+              <strong>
+                Kids Doctor – Nơi đồng hành chăm sóc sức khỏe toàn diện cho trẻ.
+              </strong>
             </p>
           </div>
         </div>

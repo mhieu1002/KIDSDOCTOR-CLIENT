@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="footer-overlay">
         <div className="footer-wrapper">
           <div className="footer-content">
-            <h2>Phòng Khám Chuyên Khoa Nhi Kids Doctor</h2>
+            <h2>Phòng khám Nhi Kids Doctor</h2>
             <p>
-              Địa chỉ: Phòng khám Nhi Kids Doctor, 136 Đường Số 6, Phường Long
-              Trường, Thành phố Hồ Chí Minh
+              Địa chỉ: Phòng khám Nhi Kids Doctor, 136 đường số 6, khu dân cư
+              Phú Hữu, Phường Long Trường, TP. Hồ Chí Minh
             </p>
             <p>
               Số điện thoại phòng khám:{" "}
@@ -17,7 +17,7 @@ export default function Footer() {
                 href="tel:0878879188"
                 style={{ color: "#fff", textDecoration: "none" }}
               >
-                0878 879 188
+                08.7887.9188
               </a>
             </p>
           </div>

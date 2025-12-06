@@ -28,7 +28,12 @@ export default function AppointmentSection() {
               }}
             >
               <strong>Phòng Khám Nhi KIDS DOCTOR</strong>
-              <p>Thời gian khám từ: 17:00 – 20:00 (T2 - CN)</p>
+              <p>
+                Thời gian khám: <strong>17:00 – 20:00 (T2 - CN)</strong>
+              </p>
+              <p style={{ textAlign: "end", fontWeight: "700" }}>
+                08:00 – 11:00 (T7 - CN)
+              </p>
             </div>
           </div>
           <div className="time-item">
@@ -41,7 +46,12 @@ export default function AppointmentSection() {
               }}
             >
               <strong>Nhà Thuốc DR.HEALTHYCARE</strong>
-              <p>Thời gian mở cửa: 07:30 – 20:00 (T2 - T7)</p>
+              <p>
+                Thời gian mở cửa: <strong>07:30 – 20:00 (T2 - T7)</strong>
+              </p>
+              <p style={{ textAlign: "end", fontWeight: "700" }}>
+                08:00 – 11:00 & 17:00 - 20:00 (CN)
+              </p>
             </div>
           </div>
         </div>

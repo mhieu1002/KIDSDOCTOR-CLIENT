@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import nhaThuoc from "../assets/Nha-thuo.jpg";
+import { Helmet } from "react-helmet-async";
+import nhaThuoc from "../assets/hinh-nha-thuoc.png";
 import "../styles/pharmacy.scss";
 import { useMedicine } from "../hooks/useMedicine";
 import { useMedicineGroup } from "../hooks/useMedicineGroup";
@@ -13,7 +14,10 @@ export default function Pharmacy() {
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 32; // mỗi trang chứa 32 sản phẩm
+  const pageSize = 32;
+
+  const pageUrl = "https://kidsdoctor.vn/nha-thuoc";
+  const ogImage = "https://kidsdoctor.vn/og-nha-thuoc.jpg"; // nên đặt 1 ảnh đại diện
 
   // Lấy danh mục thuốc
   const { medicineGroups } = useMedicineGroup({
@@ -46,7 +50,6 @@ export default function Pharmacy() {
       (selectedCategory === "Tất cả" || p.group?.name === selectedCategory)
   );
 
-  // Reset về trang 1 khi đổi danh mục hoặc tìm kiếm
   const handleCategoryChange = (cat: string) => {
     setSelectedCategory(cat);
     setCurrentPage(1);
@@ -57,29 +60,73 @@ export default function Pharmacy() {
     setCurrentPage(1);
   };
 
-  // Cắt phân trang
   const start = (currentPage - 1) * pageSize;
   const end = start + pageSize;
   const paginatedProducts = filteredProducts.slice(start, end);
 
   return (
     <>
+      {/* ⭐⭐ SEO CHO TRANG NHÀ THUỐC ⭐⭐ */}
+      <Helmet>
+        <title>
+          Nhà Thuốc DR.HEALTHYCARE - Thuốc Chính Hãng & Sản Phẩm Y Tế
+        </title>
+
+        <meta
+          name="description"
+          content="Nhà thuốc DR.HEALTHYCARE cung cấp thuốc chính hãng, sản phẩm y tế an toàn cho trẻ em và người lớn. Đội ngũ dược sĩ Đại học tư vấn tận tâm, uy tín."
+        />
+
+        <meta
+          name="keywords"
+          content="nhà thuốc, nhà thuốc nhi, DR.HEALTHYCARE, thuốc cho bé, thuốc nhi, KidsDoctor, sản phẩm y tế, dược sĩ tư vấn"
+        />
+
+        {/* Open Graph cho Facebook */}
+        <meta
+          property="og:title"
+          content="Nhà Thuốc DR.HEALTHYCARE - Thuốc Chính Hãng"
+        />
+        <meta
+          property="og:description"
+          content="Thuốc và sản phẩm y tế chính hãng, tư vấn bởi dược sĩ Đại học giàu kinh nghiệm. An toàn – uy tín – tận tâm."
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:title" content="Nhà Thuốc DR.HEALTHYCARE" />
+        <meta
+          name="twitter:description"
+          content="Cung cấp thuốc chính hãng, nguồn gốc rõ ràng, tư vấn bởi đội ngũ dược sĩ Đại học."
+        />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* Canonical */}
+        <link rel="canonical" href={pageUrl} />
+      </Helmet>
+
       {/* Info */}
       <section className="about-section" style={{ backgroundColor: "#fff" }}>
         <div className="about-container">
           <div className="about-content">
             <h2>Nhà thuốc Tây DR.HEALTHYCARE</h2>
             <p>
-              <strong>Nhà thuốc Tây DR.HEALTHYCARE</strong> với các{" "}
-              <strong>Dược sĩ Đại học</strong> tư vấn trực tiếp cùng toàn thể
-              điều dưỡng nhiều kinh nghiệm, tâm huyết và yêu trẻ, sẽ mang đến
-              chất lượng phục vụ ngoài mong đợi cho quý vị{" "}
-              <strong>Nhà thuốc tây DR.HEALTHYCARE</strong> phục vụ sức khỏe
-              cộng đồng (người lớn và trẻ em) với chất lượng tốt nhất và giá cả
-              hợp lý. Đội ngũ nhân viên, tư vấn, trình dược viên tại nhà thuốc
-              đều là những người có trình độ chuyên môn sâu được đào tạo bài bản
-              tại <strong>trường ĐH Y Dược TPHCM</strong> và có kinh nghiệm lâu
-              năm trong ngành Dược.
+              <strong>
+                Nhà thuốc DR.HEALTHYCARE được vận hành bởi Dược sĩ Đại học giàu
+                kinh nghiệm và tận tâm. Chúng tôi cung cấp thuốc và sản phẩm y
+                tế chính hãng, nguồn gốc minh bạch, hỗ trợ lựa chọn thuốc an
+                toàn cho cả người lớn và trẻ em. Không gian nhà thuốc thân
+                thiện, phục vụ nhanh chóng và chu đáo. Cam kết mang đến dịch vụ
+                chất lượng với giá cả hợp lý.
+              </strong>
+            </p>
+            <p>
+              <strong>
+                DR.HEALTHYCARE – Đồng hành chăm sóc sức khỏe cho gia đình bạn.
+              </strong>
             </p>
           </div>
           <div className="about-image">
@@ -96,11 +143,9 @@ export default function Pharmacy() {
         </div>
 
         <div className="pharmacy-container fix-pharamacy">
-          {/* Sidebar */}
           <aside className="sidebar">
             <h3>Danh mục thuốc</h3>
 
-            {/* Dropdown mobile */}
             <div className="category-select-mobile">
               <select
                 value={selectedCategory}
@@ -114,7 +159,6 @@ export default function Pharmacy() {
               </select>
             </div>
 
-            {/* Tìm kiếm */}
             <input
               type="text"
               placeholder="Tìm tên thuốc..."
@@ -122,7 +166,6 @@ export default function Pharmacy() {
               onChange={handleSearch}
             />
 
-            {/* Menu Desktop */}
             <ul className="category-list">
               {categories.map((cat) => (
                 <li
@@ -136,7 +179,6 @@ export default function Pharmacy() {
             </ul>
           </aside>
 
-          {/* Product List */}
           <div className="product-list">
             {isLoading && <p>⏳ Đang tải thuốc...</p>}
             {!isLoading && filteredProducts.length === 0 && (
@@ -166,7 +208,7 @@ export default function Pharmacy() {
             ))}
           </div>
         </div>
-        {/* Pagination */}
+
         <Pagination
           current={currentPage}
           pageSize={pageSize}

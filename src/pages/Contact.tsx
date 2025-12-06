@@ -29,10 +29,10 @@ export default function Contact() {
         <div className="contact-overlay">
           <div className="contact-wrapper">
             <div className="contact-content">
-              <h2>Phòng Khám Chuyên Khoa Nhi Kids Doctor</h2>
+              <h2>Phòng khám Nhi Kids Doctor</h2>
               <p>
-                Địa chỉ: Phòng khám Nhi Kids Doctor, 136 Đường Số 6 - KDC Phú
-                Hữu - Phường Long Trường - Thành phố Hồ Chí Minh
+                Địa chỉ: Phòng khám Nhi Kids Doctor, 136 đường số 6, khu dân cư
+                Phú Hữu, Phường Long Trường, TP. Hồ Chí Minh
               </p>
               <p>
                 Số điện thoại:{" "}
