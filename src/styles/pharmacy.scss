@@ -25,7 +25,7 @@
     .line {
       width: 60px;
       height: 2px;
-      background: #FF8FB7;
+      background: #ff8fb7;
       margin: 10px auto 0;
     }
   }
@@ -44,11 +44,31 @@
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
+    max-height: 55vh; 
+    overflow-y: auto; /* Tự cuộn khi danh mục dài */
+    overflow-x: hidden;
+
+    /* Cho scrollbar đẹp hơn */
+    scrollbar-width: thin;
+    scrollbar-color: #ffa4a4 #f1f1f1;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #ffa4a4;
+    border-radius: 10px;
+  }
+
+  .sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
 
     h3 {
       font-size: 18px;
       font-weight: 700;
-      color: #F875AA;
+      color: #f875aa;
       margin-bottom: 12px;
     }
 
@@ -63,7 +83,7 @@
       transition: 0.2s;
 
       &:focus {
-        border-color: #F875AA;
+        border-color: #f875aa;
       }
     }
 
@@ -85,7 +105,7 @@
         }
 
         &.active {
-          background: #F875AA;
+          background: #f875aa;
           color: #fff;
         }
       }
@@ -178,7 +198,7 @@
 
     .detail-btn {
       margin-top: 16px;
-      background: #F875AA;
+      background: #f875aa;
       color: #fff;
       border: none;
       padding: 8px 12px;
