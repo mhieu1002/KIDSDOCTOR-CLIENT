@@ -40,6 +40,8 @@ export default function Pharmacy() {
     keyword: search,
   });
 
+  console.log(medicines);
+
   const productList = medicines?.data.allMedicine || [];
 
   // Lọc sản phẩm
@@ -112,7 +114,7 @@ export default function Pharmacy() {
       <section className="about-section" style={{ backgroundColor: "#fff" }}>
         <div className="about-container">
           <div className="about-content">
-            <h2>Nhà thuốc Tây DR.HEALTHYCARE</h2>
+            <h2>Nhà thuốc DR.HEALTHYCARE</h2>
             <p>
               <strong>
                 Nhà thuốc DR.HEALTHYCARE được vận hành bởi Dược sĩ Đại học giàu
@@ -197,6 +199,20 @@ export default function Pharmacy() {
                   <h4>{p.name}</h4>
                   <p className="pack">Quy cách: {p.packaging}</p>
                   <p className="country">Xuất xứ: {p.manufacturingCountry}</p>
+                  <p
+                    className="country"
+                    style={{
+                      color: "#009689",
+                      fontWeight: "800",
+                      fontSize: "13px",
+                      marginTop: "4px",
+                    }}
+                  >
+                    {p.price.toLocaleString("vi", {
+                      style: "currency",
+                      currency: "VND",
+                    })}
+                  </p>
                 </div>
                 <button
                   className="detail-btn"

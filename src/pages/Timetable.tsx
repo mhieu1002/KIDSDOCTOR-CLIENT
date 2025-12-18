@@ -16,7 +16,10 @@ export default function Timetable() {
         <title>{pageTitle}</title>
 
         <meta name="description" content={description} />
-        <meta name="keywords" content="lịch khám bệnh, bác sĩ nhi, kidsdoctor, quận 9, lịch khám nhi" />
+        <meta
+          name="keywords"
+          content="lịch khám bệnh, bác sĩ nhi, kidsdoctor, quận 9, lịch khám nhi"
+        />
 
         {/* Open Graph */}
         <meta property="og:title" content={pageTitle} />
@@ -40,7 +43,7 @@ export default function Timetable() {
 
         <div className="calendar-container">
           <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FHo_Chi_Minh&hl=vi&showPrint=0&showCalendars=0&mode=MONTH&src=NDQxZDMyMGQyOTU5NGY4MWU1MTNmNGFjNTM3ZGJhNzY3ODVlYTNmNGU3ZjUzZTBjMDA3MTJiM2MzZTM0NjhiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FHo_Chi_Minh&hl=vi&showPrint=0&showCalendars=0&mode=AGENDA&src=NDQxZDMyMGQyOTU5NGY4MWU1MTNmNGFjNTM3ZGJhNzY3ODVlYTNmNGU3ZjUzZTBjMDA3MTJiM2MzZTM0NjhiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161"
             style={{ border: 0 }}
             width="100%"
             height="600"

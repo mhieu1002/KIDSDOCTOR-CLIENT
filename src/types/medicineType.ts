@@ -2,6 +2,7 @@ type MedicineDTO = {
   id: number;
   name: string;
   image: string;
+  price: number;
   composition: string;
   description: string;
   contraindications: string;

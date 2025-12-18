@@ -38,7 +38,7 @@ export default function Contact() {
                 Số điện thoại:{" "}
                 <a
                   href="tel:0878879188"
-                  style={{ color: "#7a7a7a", textDecoration: "none" }}
+                  style={{ color: "#009689", textDecoration: "none" }}
                 >
                   0878 879 188
                 </a>
@@ -47,7 +47,7 @@ export default function Contact() {
                 Email:{" "}
                 <a
                   href="mailto:pkkidsdoctor@gmail.com"
-                  style={{ color: "#7a7a7a", textDecoration: "none" }}
+                  style={{ color: "#009689", textDecoration: "none" }}
                 >
                   pkkidsdoctor@gmail.com
                 </a>

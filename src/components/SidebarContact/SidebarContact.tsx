@@ -25,7 +25,7 @@ export default function SidebarContact() {
 
       {/* Zalo */}
       <a
-        href="https://zalo.me/0878879188"
+        href="https://zalo.me/1164813373070693914"
         target="_blank"
         rel="noopener noreferrer"
         className="item zalo"

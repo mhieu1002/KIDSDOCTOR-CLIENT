@@ -1,6 +1,6 @@
 const BASE_URL = {
-  BASE_URL: "http://localhost:7010/api",
-  BASE_URL_IMAGE: "http://localhost:7010",
+  BASE_URL: "https://kidsdoctor.vn/api",
+  BASE_URL_IMAGE: "https://kidsdoctor.vn",
 };
 
 const STATUS = {

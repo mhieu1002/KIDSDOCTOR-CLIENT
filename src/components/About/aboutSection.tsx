@@ -21,9 +21,8 @@ export default function AboutSection() {
               />
             </div>
             <p>
-              <strong>PHÒNG KHÁM NHI KIDS DOCTOR</strong> gồm các Bác sĩ đang
-              công tác tại <strong>Phòng Khám Nhi Kids Doctor </strong> quy tụ
-              các bác sĩ giàu kinh nghiệm từ
+              <strong>PHÒNG KHÁM NHI KIDS DOCTOR</strong> quy tụ các bác sĩ giàu
+              kinh nghiệm từ
               <strong> Bệnh viện Nhi Đồng 1 và Nhi Đồng 2, </strong> chuyên khám
               và điều trị cho trẻ sơ sinh – trẻ nhỏ.
             </p>

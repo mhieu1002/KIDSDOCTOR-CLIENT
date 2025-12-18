@@ -7,7 +7,7 @@ export default function AppointmentSection() {
       <div className="banner">
         <img src={banner} alt="Doctor and Kid" className="banner-bg" />
         <a
-          href="https://zalo.me/0878879188"
+          href="https://zalo.me/1164813373070693914"
           target="_blank"
           rel="noopener noreferrer"
         >
