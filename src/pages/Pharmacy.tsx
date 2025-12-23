@@ -199,20 +199,35 @@ export default function Pharmacy() {
                   <h4>{p.name}</h4>
                   <p className="pack">Quy cách: {p.packaging}</p>
                   <p className="country">Xuất xứ: {p.manufacturingCountry}</p>
-                  <p
-                    className="country"
-                    style={{
-                      color: "#009689",
-                      fontWeight: "800",
-                      fontSize: "13px",
-                      marginTop: "4px",
-                    }}
-                  >
-                    {p.price.toLocaleString("vi", {
-                      style: "currency",
-                      currency: "VND",
-                    })}
-                  </p>
+                  {p.price && p.price > 0 ? (
+                    <p
+                      className="country"
+                      style={{
+                        color: "#009689",
+                        fontWeight: "800",
+                        fontSize: "13px",
+                        marginTop: "4px",
+                      }}
+                    >
+                      {p.price.toLocaleString("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      })}
+                    </p>
+                  ) : (
+                    <p
+                      className="country"
+                      style={{
+                        color: "#009689",
+                        fontWeight: "700",
+                        fontSize: "13px",
+                        marginTop: "4px",
+                        lineHeight: "1.3"
+                      }}
+                    >
+                      Liên hệ nhà thuốc để biết thêm chi tiết
+                    </p>
+                  )}
                 </div>
                 <button
                   className="detail-btn"

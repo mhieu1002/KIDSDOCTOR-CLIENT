@@ -102,10 +102,36 @@ export default function PharmacyDetail() {
           <p>
             <strong>Quy cách:</strong> {data.packaging}
           </p>
-          <p>
-            <strong style={{ lineHeight: "1.5" }}>Thành phần:</strong>{" "}
-            {data.composition}
+          <p style={{ lineHeight: "1.5", textAlign: "justify" }}>
+            <strong>Thành phần:</strong> {data.composition}
           </p>
+          {/* GIÁ THUỐC */}
+          {data.price && data.price > 0 ? (
+            <p
+              style={{
+                // color: "#009689",
+                fontWeight: 700,
+                fontSize: "15px",
+              }}
+            >
+              Giá:{" "}
+              {data.price.toLocaleString("vi-VN", {
+                style: "currency",
+                currency: "VND",
+              })}
+            </p>
+          ) : (
+            <p
+              style={{
+                color: "#e72929",
+                fontWeight: 700,
+                fontSize: "16px",
+                margin: "8px 0 12px",
+              }}
+            >
+              Giá: Liên hệ nhà thuốc để biết thêm chi tiết
+            </p>
+          )}
         </div>
       </div>
 
