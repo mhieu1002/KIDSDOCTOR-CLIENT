@@ -29,6 +29,16 @@ export default function DoctorTeam() {
     navigate(`/bac-si/${doctor.id}-${slug}`);
   };
 
+    const renderTextBlock = (text: string) =>
+    text
+      ?.split("\n")
+      .filter((line) => line.trim() !== "")
+      .map((line, index) => (
+        <p key={index} className="bullet-line">
+          {line}
+        </p>
+      ));
+
   if (isLoading) {
     return (
       <section className="doctor-team">
@@ -67,7 +77,7 @@ export default function DoctorTeam() {
               <div className="doctor-info">
                 <h3>{doctor.name}</h3>
                 <p className="specialty">{doctor.displayPosition}</p>
-                <p className="skills">{doctor.displaySpecialty}</p>
+                <p className="skills">{renderTextBlock(doctor.displaySpecialty)}</p>
                 <button
                   className="view-more"
                   onClick={() => handleViewDetail(doctor)}

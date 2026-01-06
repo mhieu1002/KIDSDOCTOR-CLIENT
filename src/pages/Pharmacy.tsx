@@ -14,7 +14,7 @@ export default function Pharmacy() {
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 32;
+  const pageSize = 16;
 
   const pageUrl = "https://kidsdoctor.vn/nha-thuoc";
   const ogImage = "https://kidsdoctor.vn/og-nha-thuoc.jpg"; // nên đặt 1 ảnh đại diện

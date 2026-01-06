@@ -7,14 +7,13 @@ export default function Timetable() {
   const description =
     "Xem lịch khám bệnh của các bác sĩ tại Phòng khám Nhi KidsDoctor Quận 9. Cập nhật nhanh – Chính xác – Dễ theo dõi.";
   const canonicalUrl = "https://kidsdoctor.vn/lich-kham-benh";
-  const ogImage = "https://kidsdoctor.vn/og-kidsdoctor.jpg"; // nếu có ảnh riêng thì đổi
+  const ogImage = "https://kidsdoctor.vn/og-kidsdoctor.jpg";
 
   return (
     <div>
       {/* ⭐⭐ SEO ⭐⭐ */}
       <Helmet>
         <title>{pageTitle}</title>
-
         <meta name="description" content={description} />
         <meta
           name="keywords"
@@ -34,7 +33,6 @@ export default function Timetable() {
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
 
-        {/* Canonical */}
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
@@ -43,13 +41,14 @@ export default function Timetable() {
 
         <div className="calendar-container">
           <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FHo_Chi_Minh&hl=vi&showPrint=0&showCalendars=0&mode=AGENDA&src=NDQxZDMyMGQyOTU5NGY4MWU1MTNmNGFjNTM3ZGJhNzY3ODVlYTNmNGU3ZjUzZTBjMDA3MTJiM2MzZTM0NjhiYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161"
-            style={{ border: 0 }}
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FHo_Chi_Minh&mode=AGENDA&showNav=0&showPrint=0&showCalendars=0&showTz=0&showTitle=0&src=cGhvbmdraGFta2lkc2RvY3RvckBnbWFpbC5jb20&color=%23e67c73"
+            style={{ border: "1px solid #e5e7eb", borderRadius: 8 }}
             width="100%"
             height="600"
             frameBorder="0"
             scrolling="no"
-          ></iframe>
+            title="Lịch khám KidsDoctor"
+          />
         </div>
       </div>
     </div>

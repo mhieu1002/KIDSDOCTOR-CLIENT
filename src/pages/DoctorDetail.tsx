@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { BASE_URL } from "../constants";
 import "../styles/doctorDetail.scss";
 
 export default function DoctorDetail() {
+  const navigate = useNavigate();
   const { slug } = useParams();
   const [doctor, setDoctor] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +58,10 @@ export default function DoctorDetail() {
         />
 
         {/* Open Graph cho Facebook */}
-        <meta property="og:title" content={`Bác sĩ ${info.name} - KidsDoctor`} />
+        <meta
+          property="og:title"
+          content={`Bác sĩ ${info.name} - KidsDoctor`}
+        />
         <meta property="og:description" content={shortIntro} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={fullUrl} />
@@ -75,18 +79,32 @@ export default function DoctorDetail() {
 
       {/* --- BODY PAGE --- */}
       <div className="doctor-detail-card">
+        <div className="doctor-header">
+          {/* ẢNH BÁC SĨ */}
+          <div className="doctor-avatar">
+            <img src={imageUrl} alt={`Bác sĩ ${info.name}`} loading="lazy" />
+          </div>
+
+          {/* THÔNG TIN NGẮN */}
+          <div className="doctor-basic-info">
+            <h2>{info.name}</h2>
+            <p className="doctor-role">Bác sĩ Nhi khoa</p>
+
+            {info.displaySpecialty && (
+              <div className="doctor-specialty">
+                {renderTextBlock(info.displaySpecialty)}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* CHI TIẾT */}
         <div className="doctor-info">
-          <h2>{info.name}</h2>
-          <h4>PROFILE CÁ NHÂN</h4>
+          <h4>HỒ SƠ CHUYÊN MÔN</h4>
 
           <div className="section">
             <h3>Giới thiệu</h3>
             {renderTextBlock(info.introduce)}
-          </div>
-
-          <div className="section">
-            <h3>Chuyên khoa</h3>
-            {renderTextBlock(info.displaySpecialty)}
           </div>
 
           <div className="section">
@@ -98,12 +116,21 @@ export default function DoctorDetail() {
             <h3>Kinh nghiệm làm việc</h3>
             {renderTextBlock(info.experience)}
           </div>
-
-          <div className="section">
-            <h3>Thế mạnh chuyên môn</h3>
-            {renderTextBlock(info.strength)}
-          </div>
         </div>
+      </div>
+      <div className="doctor-toolbar">
+        <button
+          className="btn-back"
+          onClick={() => {
+            if (window.history.length > 1) {
+              navigate(-1);
+            } else {
+              navigate("/bac-si");
+            }
+          }}
+        >
+          ← Quay lại
+        </button>
       </div>
     </div>
   );

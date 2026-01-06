@@ -1,50 +1,204 @@
 .doctor-detail {
-  padding: 30px 20px;
-  border-radius: 12px;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto 0;
+  padding: 32px 16px;
 
-  .doctor-info {
-    h2 {
-      margin-bottom: 30px;
-      color: #E83C91;
-      font-size: 35px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-align: center;
-    }
+  &.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 
-    h4 {
-      font-size: 18px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 500;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.doctor-detail-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
 
-    h3 {
-      font-size: 18px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
-    }
+.doctor-header {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 40px;
+}
 
+/* Avatar */
+.doctor-avatar {
+  flex-shrink: 0;
+
+  img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+    background: #f8fafc;
+    border: 4px solid #eef2ff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Basic info */
+.doctor-basic-info {
+  flex: 1;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 6px;
+  }
+
+  .doctor-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f875aa;
+    margin-bottom: 14px;
+  }
+
+  .doctor-specialty {
     p {
-      position: relative;
-      line-height: 2;
-      text-align: justify;
-      padding-left: 28px; // tạo khoảng trống để chấm không đè lên text
-      font-size: 16px;
-
-      &::before {
-        content: "•";
-        position: absolute;
-        left: 15px;
-        color: #000;
-        font-weight: bold;
-      }
+      margin: 4px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #374151;
     }
+  }
+}
+
+.doctor-info {
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.section {
+  margin-bottom: 28px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f875aa;
+    margin-bottom: 10px;
+  }
+}
+
+/* Bullet text */
+.bullet-line {
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+
+  // &::before {
+  //   content: "•";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   color: #2563eb;
+  //   font-size: 20px;
+  //   line-height: 1;
+  // }
+}
+
+/* ================================
+   Loading & Empty
+================================ */
+.doctor-detail-loading,
+.doctor-detail-empty {
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+  padding: 40px 0;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 992px) {
+  .doctor-header {
+    gap: 24px;
+  }
+
+  .doctor-avatar img {
+    width: 200px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-avatar img {
+    width: 180px;
+    height: 220px;
+  }
+
+  .doctor-basic-info {
+    h2 {
+      font-size: 26px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-detail-card {
+    padding: 20px;
+  }
+
+  .section h3 {
+    font-size: 16px;
+  }
+
+  .bullet-line {
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   Toolbar (Top Right)
+================================ */
+.doctor-toolbar {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+/* Back Button */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F875AA;
+  background: #eff6ff;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #dbeafe;
+    transform: translateX(-2px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .doctor-toolbar {
+    justify-content: center;
   }
 }
