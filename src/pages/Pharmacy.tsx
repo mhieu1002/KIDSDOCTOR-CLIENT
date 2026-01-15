@@ -81,7 +81,7 @@ export default function Pharmacy() {
 
         <meta
           name="keywords"
-          content="nhà thuốc, nhà thuốc nhi, DR.HEALTHYCARE, thuốc cho bé, thuốc nhi, KidsDoctor, sản phẩm y tế, dược sĩ tư vấn"
+          content="nhà thuốc, nhà thuốc nhi, DR.HEALTHYCARE, thuốc cho bé, thuốc nhi, Kids Doctor, sản phẩm y tế, dược sĩ tư vấn"
         />
 
         {/* Open Graph cho Facebook */}

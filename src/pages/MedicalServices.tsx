@@ -9,30 +9,30 @@ export default function MedicalServices() {
     <>
       {/* ⭐ SEO CHO TRANG DỊCH VỤ Y TẾ ⭐ */}
       <Helmet>
-        <title>Dịch Vụ Y Tế - Phòng khám Nhi KidsDoctor</title>
+        <title>Dịch Vụ Y Tế - Phòng khám Nhi Kids Doctor</title>
 
         <meta
           name="description"
-          content="Tổng hợp các dịch vụ y tế tại Phòng khám Nhi KidsDoctor: khám nhi, tư vấn sức khỏe, xét nghiệm, điều trị, chăm sóc trẻ toàn diện bởi đội ngũ bác sĩ Nhi Đồng 2."
+          content="Tổng hợp các dịch vụ y tế tại Phòng khám Nhi Kids Doctor: khám nhi, tư vấn sức khỏe, xét nghiệm, điều trị, chăm sóc trẻ toàn diện bởi đội ngũ bác sĩ Nhi Đồng 2."
         />
 
         <meta
           name="keywords"
-          content="dịch vụ y tế, khám nhi, phòng khám nhi, KidsDoctor, bác sĩ nhi đồng 2, khám bệnh cho bé"
+          content="dịch vụ y tế, khám nhi, phòng khám nhi, Kids Doctor, bác sĩ nhi đồng 2, khám bệnh cho bé"
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Dịch Vụ Y Tế - KidsDoctor" />
+        <meta property="og:title" content="Dịch Vụ Y Tế - Kids Doctor" />
         <meta
           property="og:description"
-          content="Các dịch vụ khám chữa bệnh dành cho trẻ em tại Phòng khám Nhi KidsDoctor – đội ngũ bác sĩ chuyên khoa Nhi, giàu kinh nghiệm."
+          content="Các dịch vụ khám chữa bệnh dành cho trẻ em tại Phòng khám Nhi Kids Doctor – đội ngũ bác sĩ chuyên khoa Nhi, giàu kinh nghiệm."
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
-        <meta name="twitter:title" content="Dịch Vụ Y Tế - KidsDoctor" />
+        <meta name="twitter:title" content="Dịch Vụ Y Tế - Kids Doctor" />
         <meta
           name="twitter:description"
           content="Dịch vụ khám và chăm sóc sức khỏe trẻ em bởi bác sĩ chuyên khoa Nhi."

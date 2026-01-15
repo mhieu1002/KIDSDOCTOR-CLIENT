@@ -3,9 +3,9 @@ import Carousel from "../components/Carousel/carousel";
 import "../styles/timetable.scss";
 
 export default function Timetable() {
-  const pageTitle = "Lịch Khám Bệnh | KidsDoctor Quận 9";
+  const pageTitle = "Lịch Khám Bệnh | Kids Doctor Quận 9";
   const description =
-    "Xem lịch khám bệnh của các bác sĩ tại Phòng khám Nhi KidsDoctor Quận 9. Cập nhật nhanh – Chính xác – Dễ theo dõi.";
+    "Xem lịch khám bệnh của các bác sĩ tại Phòng khám Nhi Kids Doctor Quận 9. Cập nhật nhanh – Chính xác – Dễ theo dõi.";
   const canonicalUrl = "https://kidsdoctor.vn/lich-kham-benh";
   const ogImage = "https://kidsdoctor.vn/og-kidsdoctor.jpg";
 
@@ -17,7 +17,7 @@ export default function Timetable() {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="lịch khám bệnh, bác sĩ nhi, kidsdoctor, quận 9, lịch khám nhi"
+          content="lịch khám bệnh, bác sĩ nhi, kids doctor, quận 9, lịch khám nhi"
         />
 
         {/* Open Graph */}
@@ -47,7 +47,7 @@ export default function Timetable() {
             height="600"
             frameBorder="0"
             scrolling="no"
-            title="Lịch khám KidsDoctor"
+            title="Lịch khám Kids Doctor"
           />
         </div>
       </div>

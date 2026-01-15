@@ -77,10 +77,10 @@ export default function PostDetail() {
 
       {/* ⭐⭐ SEO CHO BÀI VIẾT ⭐⭐ */}
       <Helmet>
-        <title>{post.title} | KidsDoctor</title>
+        <title>{post.title} | Kids Doctor</title>
 
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={`KidsDoctor, bài viết, ${post.title}`} />
+        <meta name="keywords" content={`Kids Doctor, bài viết, ${post.title}`} />
 
         {/* Open Graph (Facebook, Zalo) */}
         <meta property="og:title" content={post.title} />

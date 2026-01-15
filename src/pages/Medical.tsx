@@ -51,7 +51,7 @@ export default function Medical() {
     <>
       {/* ⭐ SEO CHO TRANG DANH SÁCH KIẾN THỨC Y KHOA ⭐ */}
       <Helmet>
-        <title>Kiến Thức Y Khoa - Phòng khám Nhi KidsDoctor</title>
+        <title>Kiến Thức Y Khoa - Phòng khám Nhi Kids Doctor</title>
 
         <meta
           name="description"
@@ -60,11 +60,11 @@ export default function Medical() {
 
         <meta
           name="keywords"
-          content="kiến thức y khoa, sức khỏe trẻ em, chăm sóc trẻ, bệnh trẻ em, phòng khám nhi, KidsDoctor, bác sĩ nhi đồng 2"
+          content="kiến thức y khoa, sức khỏe trẻ em, chăm sóc trẻ, bệnh trẻ em, phòng khám nhi, Kids Doctor, bác sĩ nhi đồng 2"
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Kiến Thức Y Khoa - KidsDoctor" />
+        <meta property="og:title" content="Kiến Thức Y Khoa - Kids Doctor" />
         <meta
           property="og:description"
           content="Chuyên mục Kiến Thức Y Khoa dành cho bố mẹ chăm sóc trẻ đúng cách. Bài viết được biên soạn bởi đội ngũ bác sĩ Bệnh viện Nhi Đồng 2."
@@ -74,7 +74,7 @@ export default function Medical() {
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
-        <meta name="twitter:title" content="Kiến Thức Y Khoa - KidsDoctor" />
+        <meta name="twitter:title" content="Kiến Thức Y Khoa - Kids Doctor" />
         <meta
           name="twitter:description"
           content="Kiến thức sức khỏe trẻ em từ đội ngũ bác sĩ chuyên khoa Nhi."

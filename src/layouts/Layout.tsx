@@ -22,7 +22,7 @@ export default function MainLayout() {
         <Outlet />
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        KidsDoctor © {new Date().getFullYear()}
+        Kids Doctor © {new Date().getFullYear()}
       </Footer>
     </Layout>
   );

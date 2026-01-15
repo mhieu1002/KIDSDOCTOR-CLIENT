@@ -48,19 +48,19 @@ export default function DoctorDetail() {
     <div className="doctor-detail container">
       {/* ⭐ SEO PHẦN NÀY ⭐ */}
       <Helmet>
-        <title>{info.name} - Bác sĩ Phòng khám Nhi KidsDoctor</title>
+        <title>{info.name} - Bác sĩ Phòng khám Nhi Kids Doctor</title>
 
         <meta name="description" content={shortIntro} />
 
         <meta
           name="keywords"
-          content={`Bác sĩ ${info.name}, bác sĩ nhi, phòng khám nhi, KidsDoctor, bác sĩ giỏi cho bé`}
+          content={`Bác sĩ ${info.name}, bác sĩ nhi, phòng khám nhi, Kids Doctor, bác sĩ giỏi cho bé`}
         />
 
         {/* Open Graph cho Facebook */}
         <meta
           property="og:title"
-          content={`Bác sĩ ${info.name} - KidsDoctor`}
+          content={`Bác sĩ ${info.name} - Kids Doctor`}
         />
         <meta property="og:description" content={shortIntro} />
         <meta property="og:image" content={imageUrl} />

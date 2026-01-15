@@ -5,17 +5,17 @@ export default function Contact() {
   return (
     <div>
       <Helmet>
-        <title>Liên hệ - Phòng khám Nhi KidsDoctor</title>
+        <title>Liên hệ - Phòng khám Nhi Kids Doctor</title>
         <meta
           name="description"
-          content="Liên hệ Phòng khám Nhi KidsDoctor để được tư vấn và đặt lịch khám cho bé nhanh chóng. Đội ngũ bác sĩ Nhi nhiều năm kinh nghiệm từ Bệnh viện Nhi Đồng 2, tận tâm và chuyên nghiệp."
+          content="Liên hệ Phòng khám Nhi Kids Doctor để được tư vấn và đặt lịch khám cho bé nhanh chóng. Đội ngũ bác sĩ Nhi nhiều năm kinh nghiệm từ Bệnh viện Nhi Đồng 2, tận tâm và chuyên nghiệp."
         />
         <meta
           name="keywords"
           content="liên hệ phòng khám nhi, phòng khám kids doctor, đặt lịch khám nhi, bác sĩ nhi đồng 2, khám nhi quận 9, phòng khám trẻ em, tư vấn sức khỏe trẻ em"
         />
-        <meta name="author" content="Phòng khám Nhi KidsDoctor" />
-        <meta property="og:title" content="Phòng khám Nhi KidsDoctor" />
+        <meta name="author" content="Phòng khám Nhi Kids Doctor" />
+        <meta property="og:title" content="Phòng khám Nhi Kids Doctor" />
         <meta
           property="og:description"
           content="Phòng khám chuyên khoa Nhi với đội ngũ bác sĩ từ Bệnh viện Nhi Đồng 2 - tận tâm, chuyên nghiệp và thân thiện với trẻ nhỏ."

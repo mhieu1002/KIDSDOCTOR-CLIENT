@@ -8,17 +8,17 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Phòng khám Nhi KidsDoctor</title>
+        <title>Phòng khám Nhi Kids Doctor</title>
         <meta
           name="description"
-          content="Phòng khám Nhi KidsDoctor - địa chỉ chăm sóc sức khỏe trẻ em uy tín tại TP. Hồ Chí Minh. Đội ngũ bác sĩ giàu kinh nghiệm từ Bệnh viện Nhi Đồng 2. Đặt lịch khám nhanh chóng, tiện lợi."
+          content="Phòng khám Nhi Kids Doctor - địa chỉ chăm sóc sức khỏe trẻ em uy tín tại TP. Hồ Chí Minh. Đội ngũ bác sĩ giàu kinh nghiệm từ Bệnh viện Nhi Đồng 2. Đặt lịch khám nhanh chóng, tiện lợi."
         />
         <meta
           name="keywords"
           content="phòng khám nhi, bác sĩ nhi đồng, kids doctor, khám nhi, phòng khám trẻ em, bác sĩ nhi đồng 2, đặt lịch khám nhi"
         />
-        <meta name="author" content="Phòng khám Nhi KidsDoctor" />
-        <meta property="og:title" content="Phòng khám Nhi KidsDoctor" />
+        <meta name="author" content="Phòng khám Nhi Kids Doctor" />
+        <meta property="og:title" content="Phòng khám Nhi Kids Doctor" />
         <meta
           property="og:description"
           content="Phòng khám chuyên khoa Nhi với đội ngũ bác sĩ từ Bệnh viện Nhi Đồng 2 - tận tâm, chuyên nghiệp và thân thiện với trẻ nhỏ."
